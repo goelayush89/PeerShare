@@ -31,9 +31,7 @@ void getStringHash(string segmentString, string& hash){
     hash += "$$";
 }
 
-/*************************************************************/
-/*        Returns combined PIECEWISE hash of the file        */
-/*************************************************************/
+
 string getHash(char* path){
     
     int  i, accum;
