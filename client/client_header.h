@@ -20,7 +20,7 @@ extern uint16_t peer_port, tracker1_port, tracker2_port;
 extern unordered_map<string, string> downloadedFiles;
 extern bool loggedIn;
 extern bool isCorruptedFile;
-extern unordered_map<string, unordered_map<string, bool>> isUploaded; // group -> filename -> bool
+extern unordered_map<string, unordered_map<string, bool>> isUploaded; 
 extern unordered_map<string, vector<int>> fileChunkInfo;
 extern vector<vector<string>> curDownFileChunks;
 extern unordered_map<string, string> fileToFilePath;
