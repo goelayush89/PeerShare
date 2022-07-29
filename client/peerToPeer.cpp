@@ -1,8 +1,5 @@
 #include "client_header.h"
 
-/*************************************************************/
-/*           Handles different requests from peer client     */
-/*************************************************************/
 void handleClientRequest(int client_socket){
     string client_uid = "";
 
@@ -29,7 +26,7 @@ void handleClientRequest(int client_socket){
         writeLog("sent: " + string(reply));
     }
     else if(inpt[0] == "get_chunk"){
-        //inpt = [get_chunk, filename, to_string(chunkNum), destination]
+        
         writeLog("\nsending chunk...");
         string filepath = fileToFilePath[inpt[1]];
         ll chunkNum = stoll(inpt[2]);
@@ -49,9 +46,6 @@ void handleClientRequest(int client_socket){
     return;
 }
 
-/****************************************************************/
-/*Connects to <serverPeerIP:serverPortIP> and sends it <command>*/
-/****************************************************************/
 string connectToPeer(char* serverPeerIP, char* serverPortIP, string command){
     int peersock = 0;
     struct sockaddr_in peer_serv_addr; 
@@ -96,7 +90,7 @@ string connectToPeer(char* serverPeerIP, char* serverPortIP, string command){
         return string(server_reply);
     }
     else if(curcmd == "get_chunk"){
-        //"get_chunk $$ filename $$ to_string(chunkNum) $$ destination
+        
         if(send(peersock , &command[0] , strlen(&command[0]) , MSG_NOSIGNAL ) == -1){
             printf("Error: %s\n",strerror(errno));
             return "error"; 
@@ -131,9 +125,6 @@ string connectToPeer(char* serverPeerIP, char* serverPortIP, string command){
     return "aa";
 }
 
-/*****************************************************************************/
-/* The peer acts as a server, continuously listening for connection requests */
-/*****************************************************************************/
 void* runAsServer(void* arg){
     int server_socket; 
     struct sockaddr_in address; 
