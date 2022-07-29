@@ -1,9 +1,8 @@
-# Bit Torrent : Peer-to-Peer Group Based File Sharing System
+# PeerShare
 
 - The Mini-torrent project is basically a peer-to-peer file sharing network. The user
 has functionalities like sharing a file, downloading a file, removing a file from
 sharing etc. It is basically like the Bit-Torrent we have on the internet.
-- The architecture is such that there are multiple clients(users) and a tracker which stores the metadata of which all users have a file, basically a file-user mapping.
 
   
 
